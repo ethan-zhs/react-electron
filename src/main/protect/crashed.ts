@@ -1,7 +1,7 @@
 /**
  * 崩溃日志，崩溃重启
  */
-import { BrowserWindow, crashReporter, dialog } from 'electron'
+import { BrowserWindow, crashReporter, dialog, app } from 'electron'
 
 // 开启进程崩溃记录
 crashReporter.start({
@@ -12,7 +12,7 @@ crashReporter.start({
     uploadToServer: false
 })
 
-function reloadWindow(mainWin) {
+function reloadWindow(mainWin: any) {
     if (mainWin.isDestroyed()) {
         app.relaunch()
         app.exit(0)
@@ -39,7 +39,7 @@ export default function () {
     const mainWindow = BrowserWindow.fromId(global.mainId)
     mainWindow.webContents.on('render-process-gone', () => {
         const errorMessage = crashReporter.getLastCrashReport()
-        console.log('App was crashed!\ncrash message: '.toString('utf-8'), errorMessage)
+        console.log('App was crashed!\ncrash message: '.toString(), errorMessage)
         reloadWindow(mainWindow)
     })
 }

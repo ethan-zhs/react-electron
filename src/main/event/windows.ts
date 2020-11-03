@@ -22,7 +22,7 @@ const transhtml = url.format({
 
 function createNoBarWindow() {
     ipcMain.on('create-nobar-window', () => {
-        let win = new BrowserWindow({
+        let win: any = new BrowserWindow({
             width: 800,
             height: 600,
             frame: false
@@ -36,7 +36,7 @@ function createNoBarWindow() {
 
 function createWindowDrag() {
     ipcMain.on('create-nobar-window-drag', () => {
-        let win = new BrowserWindow({
+        let win: any = new BrowserWindow({
             width: 800,
             height: 600,
             frame: false,
@@ -51,7 +51,7 @@ function createWindowDrag() {
 
 function createWindowTrans() {
     ipcMain.on('create-window-transparent', () => {
-        let win = new BrowserWindow({
+        let win: any = new BrowserWindow({
             width: 800,
             height: 600,
             transparent: true,

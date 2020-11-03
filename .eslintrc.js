@@ -27,6 +27,7 @@ module.exports = {
         "@typescript-eslint/interface-name-prefix": 0,
         "@typescript-eslint/camelcase": 0,
         "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/no-namespace": 0,
         "react/prop-types": 0,
         "react/display-name": 0
     }

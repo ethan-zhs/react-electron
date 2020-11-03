@@ -1,6 +1,6 @@
 import { dialog } from 'electron'
 
-export default [
+const MENU: any = [
     {
         label: '文件',
         submenu: [
@@ -39,3 +39,5 @@ export default [
         role: 'minimize'
     }
 ]
+
+export default MENU

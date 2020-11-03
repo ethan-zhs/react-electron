@@ -9,7 +9,7 @@ const nodeEnv = isProd ? 'production' : 'development'
 
 module.exports = {
     mode: nodeEnv,
-    entry: resolve('src/main/main.js'),
+    entry: resolve('src/main/index.ts'),
     output: {
         path: resolve('dist/main'),
         filename: '[name].js'

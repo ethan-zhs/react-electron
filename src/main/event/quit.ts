@@ -5,7 +5,7 @@ import { app, BrowserWindow, dialog, ipcMain } from 'electron'
 
 let hasQuit = false
 
-function checkQuit(mainWindow, event) {
+function checkQuit(mainWindow: any, event: any) {
     const options = {
         type: 'info',
         title: '关闭确认',

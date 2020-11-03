@@ -6,7 +6,6 @@ import { app, BrowserWindow, Tray, Menu } from 'electron'
 import path from 'path'
 
 let tray = null
-global.tray = tray
 
 export default function createTray() {
     const mainWindow = BrowserWindow.fromId(global.mainId)

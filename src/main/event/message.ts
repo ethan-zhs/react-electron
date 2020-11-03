@@ -33,19 +33,20 @@ function getAsyncMsg() {
 
 function sendMsgContinuous() {
     let i = 0
+    let sendMsg = false
     const mainWindow = BrowserWindow.fromId(global.mainId)
     ipcMain.on('start-send', () => {
         console.log('开始定时向渲染进程发送消息！')
-        global.sendMsg = true
+        sendMsg = true
     })
 
     ipcMain.on('end-send', () => {
         console.log('结束向渲染进程发送消息！')
-        global.sendMsg = false
+        sendMsg = false
     })
 
     setInterval(() => {
-        if (global.sendMsg) {
+        if (sendMsg) {
             mainWindow.webContents.send('main-msg', `Message【${i++}】`)
         }
     }, 200)

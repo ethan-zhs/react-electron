@@ -6,7 +6,16 @@ import handleMessage from './event/message'
 import handleQuit from './event/quit'
 import createTray from './protect/tray'
 import handleCrashed from './protect/crashed'
-import initGlobalShortcut from './shortcuts'
+import initGlobalShortcut from './services/shortcuts'
+
+declare global {
+    namespace NodeJS {
+        interface Global {
+            mainId: number
+            myField: any
+        }
+    }
+}
 
 function createWindow() {
     // 创建浏览器窗口
